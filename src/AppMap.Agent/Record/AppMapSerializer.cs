@@ -6,8 +6,9 @@ using AppMap.Util;
 namespace AppMap.Record;
 
 /// <summary>
-/// Writes AppMap JSON (format version 1.2, matching appmap-java's
-/// AppMapSerializer). Events are serialized one at a time as standalone
+/// Writes AppMap JSON (format version 1.9.0 — the highest spec version for
+/// which every version-gated required field, e.g. metadata.recorder.type,
+/// is actually emitted). Events are serialized one at a time as standalone
 /// fragments — the recorder streams them to a temp file as they happen, as
 /// the Java agent does — and the final document is assembled around the raw
 /// fragment bytes. Events mutated after being streamed (e.g. the HTTP route
@@ -16,7 +17,7 @@ namespace AppMap.Record;
 /// </summary>
 public static class AppMapSerializer
 {
-    public const string FormatVersion = "1.2";
+    public const string FormatVersion = "1.9.0";
     public const string ClientName = "appmap-dotnet";
     public const string ClientUrl = "https://github.com/getappmap/appmap-dotnet";
 

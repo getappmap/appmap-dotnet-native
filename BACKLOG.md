@@ -179,3 +179,13 @@ Original scope notes (for the deeper passes):
   patch time (caught, but noisy). Re-add them by targeting the concrete
   algorithm types instead of the abstract base. Still wanted: `secret`,
   `job.cancel`, `crypto.set_key`.
+- **`metadata.git.status` is missing.** The spec marks it *Required* whenever
+  a `git` block is present ("status of the repo relative to the commit,
+  represented as a list of status messages... empty list if clean"). Found
+  while checking the declared format version (`FormatVersion` was bumped
+  from `1.2` to `1.9.0`, the highest version whose new *required*-for-
+  compliance field, `metadata.recorder.type`, is actually emitted — the CLI
+  still accepts the document at exit 0). `GitMetadata` in
+  `src/AppMap.Agent/Util/GitMetadata.cs` reads `repository`/`branch`/`commit`
+  by parsing `.git` directly but never computes a status list; unrelated to
+  the version bump, not yet fixed.

@@ -1,7 +1,7 @@
 # AppMap agent for .NET
 
 Records the execution of .NET code as [AppMap](https://appmap.io) JSON
-files (format version 1.2), the same format produced by
+files (format version 1.9.0), the same format produced by
 [appmap-java](https://github.com/getappmap/appmap-java), whose
 architecture this agent ports to C#.
 

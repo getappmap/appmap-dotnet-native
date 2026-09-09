@@ -22,7 +22,7 @@ public class AppMapSerializerTests
             new List<Event>(), new CodeObjectTree());
         var root = doc.RootElement;
 
-        Assert.Equal("1.2", root.GetProperty("version").GetString());
+        Assert.Equal("1.9.0", root.GetProperty("version").GetString());
         var metadata = root.GetProperty("metadata");
         Assert.Equal("demo", metadata.GetProperty("app").GetString());
         Assert.Equal("csharp", metadata.GetProperty("language").GetProperty("name").GetString());
