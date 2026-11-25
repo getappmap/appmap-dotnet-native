@@ -1,3 +1,5 @@
+> **This is the original C++ prototype, no longer developed.** The current AppMap agent for .NET is at [getappmap/appmap-dotnet](https://github.com/getappmap/appmap-dotnet). It is written in C#, runs on Windows and Linux, and needs no change to your code.
+
 # AppMap-dotnet
 
 AppMap-dotnet records the execution of .NET code. Note currently only Linux is supported.
